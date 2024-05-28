@@ -1,8 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Point;
-import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -95,7 +93,7 @@ public class Game extends JFrame implements MouseListener, ActionListener {
         scoreText.setHorizontalAlignment(SwingConstants.LEADING);
         scoreText.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         scoreText.setForeground(new Color(35, 101, 51));
-        scoreText.setBounds(10, 10, 600, 50);
+        scoreText.setBounds(25, 10, 600, 50);
         game.add(scoreText);
 
         timeText = new JLabel("Time: 60");
@@ -106,9 +104,9 @@ public class Game extends JFrame implements MouseListener, ActionListener {
         game.add(timeText);
 
         start = new JButton("Start");
-        start.setBackground(new Color(75, 159, 74));
-        start.setForeground(new Color(240, 128, 128));
-        start.setBounds(570, 40, 110, 33);
+        start.setBackground(new Color(157, 193, 131));
+        start.setForeground(new Color(35, 101, 51));
+        start.setBounds(10, 45, 100, 30);
         game.add(start);
 
         frame = new JPanel();
@@ -191,8 +189,8 @@ public class Game extends JFrame implements MouseListener, ActionListener {
         setContentPane(game);
     }
 
-    public void clicked(int id){
-        int val = board[id];
+    public void clicked(int mole){
+        int val = board[mole];
         if(val==1){
             score++;
         }else{
