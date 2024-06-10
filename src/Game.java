@@ -33,14 +33,6 @@ public class Game extends JFrame implements MouseListener, ActionListener {
 
     public void mouseClicked(MouseEvent e) {
     }
-    public void endGame() {
-        JOptionPane.showMessageDialog(this, "Your Scored " + score + " points!","Game Over!", JOptionPane.INFORMATION_MESSAGE);
-        score = 0;
-        time = 30;
-        timeText.setText("30");
-        scoreText.setText("Score: 0");
-        resetGame();
-    }
     public void mousePressed(MouseEvent e) {
     }
     public void mouseReleased(MouseEvent e) {
@@ -217,13 +209,17 @@ public class Game extends JFrame implements MouseListener, ActionListener {
         holes[randomHole].setIcon(loadImage("/moleOut.png"));
     }
 
+    public void endGame() {
+        JOptionPane.showMessageDialog(this, "Your Scored " + score + " points!","Game Over!", JOptionPane.INFORMATION_MESSAGE);
+        score = 0;
+        time = 30;
+        timeText.setText("30");
+        scoreText.setText("Score: 0");
+        resetGame();
+    }
+
     public ImageIcon loadImage(String file){
         Image mole = new ImageIcon(this.getClass().getResource(file)).getImage();
         return new ImageIcon(mole);
-    }
-
-    public static void main(String[] args) {
-        Game g = new Game();
-        g.setVisible(true);
     }
 }
